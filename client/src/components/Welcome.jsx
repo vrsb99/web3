@@ -91,6 +91,19 @@ const Welcome = () => {
             <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={()=>{}} />
             <Input placeholder="Enter Message" name="message" type="text" handleChange={()=>{}} />
 
+            <div className="h-[1px] w-full bg-gray-400 my-2" />
+
+            {false? (
+              <Loader/>
+            ): (
+              <button
+                  type="button"
+            onClick={()=>{/*HandleSubmit*/}}
+                  className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer"
+                >
+                  Send now
+                </button>
+            )}
           </div>
         </div>
       </>
