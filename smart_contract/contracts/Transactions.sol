@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import "../node_modules/hardhat/console.sol";
 
 contract Transactions {
-    uint256 transactionCounter;
+    uint256 transactionCount;
 
     event Transfer(address from, address receiver, uint amount, string message, uint256 timestamp, string keyword);
 
@@ -20,16 +20,27 @@ contract Transactions {
 
     TransferStruct[] transactions;
 
-    function addToBlockchain() public {
+    function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public {
+        transactionCount += 1;
+        transactions.push(TransferStruct({
+            sender: msg.sender,
+            receiver: receiver,
+            amount: amount,
+            message: message,
+            timestamp: block.timestamp,
+            keyword: keyword
+        }));
+
+        emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
 
     }
 
     function getAllTransactions() public view returns (TransferStruct[] memory) {
-        // return transactions;
+        return transactions;
     }
 
     function getTransactionCount() public view returns (uint256) {
-        // return transactionCounter;
+        return transactionCount;
 
     }
 }
