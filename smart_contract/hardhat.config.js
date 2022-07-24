@@ -1,6 +1,12 @@
-require("@nomicfoundation/hardhat-toolbox");
+require('@nomiclabs/hardhat-waffle');
+require('dotenv').config()
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.9",
+  solidity: '0.8.0',
+  networks: {
+    rinkeby: {
+      url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
+      accounts: [`${process.env.ACCOUNT_ADDRESS}`],
+    },
+  },
 };
