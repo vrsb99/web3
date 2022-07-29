@@ -1,5 +1,7 @@
 # Krypt
 💻[Live Site](https://vrsb-krypt.netlify.app/)
+
+
 ![Web 3 Application](https://iili.io/ShJTlI.md.png)
 
 ## Introduction
@@ -8,4 +10,5 @@ Krypt is a Web 3 platform connected to a smart contract, found in smart_contract
 ### Created using Vite + React
 Setup:
 `cd client`
-`npm i && npm start` 
+`npm install --legacy-peer-deps`
+`npm start`
