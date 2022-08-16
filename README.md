@@ -11,4 +11,4 @@ Krypt is a Web 3 platform connected to a smart contract, found in smart_contract
 Setup:
 `cd client`
 `npm install --legacy-peer-deps`
-`npm start`
+`npm run dev`
